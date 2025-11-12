@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/style.css">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>    
     <title>IA Travel Quotes Generator</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
     <h1> AI Travel Inspiration</h1>
     </header>
     <main>
-        <form>
+        <form id="quote-generator-form">
             <input type="text" placeholder="Enter the topic of the travel" 
             autofocus 
             required
@@ -21,11 +22,7 @@
             />
             <input type="submit" class="submit-button"/>
         </form>
-        <div class="quote">
-            The travel quote will go here
-            <br/>
-            travel with the heart-mind
-        </div>
+        <div class="quote" id="quote"></div>
 
     </main>
     <footer>
