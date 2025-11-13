@@ -1,13 +1,30 @@
-function generateQuote(event) {
-    event.preventDefault();
-
-
+function displayQuote(response) {
     new Typewriter("#quote", {
-      strings: "La razon del viaje es conectar",
+      strings: response.data.answer,
       autoStart: true,
       delay: 1,
       cursor: "",
     });
+}
+
+
+
+function generateQuote(event) {
+    event.preventDefault();
+
+      let instructionsInput = document.querySelector("#commands");
+    let apiKey = "20ac4e1fof3t6e4bfd071a3613757bcc";
+    let prompt = `Generate travel quotes about ${instructionsInput.value}`;
+    let context =  "Act as a travel-quote expert. Create a two-line inspiring travel quote and place **— SheCodes AI** as the last line";
+
+    let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+  
+
+    console.log(`prompt: ${prompt}`);
+    console.log(`context: ${context}`);
+
+    axios.get(apiUrl).then(displayQuote);
+
 }
 
 
