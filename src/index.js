@@ -19,7 +19,11 @@ function generateQuote(event) {
 
     let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
   
+    let quoteElement = document.querySelector("#quote");
+    quoteElement.classList.remove("hidden");
+    quoteElement.innerHTML = `<div class="generating"> ⏱ Generating Travel Inspiration Quote about ${instructionsInput.value}</div>`;
 
+    console.log ("Generating quote");
     console.log(`prompt: ${prompt}`);
     console.log(`context: ${context}`);
 

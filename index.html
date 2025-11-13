@@ -14,9 +14,10 @@
     <h1> AI Travel Inspiration</h1>
     </header>
     <main>
+        <div class="form-container"> 
         <form id="quote-generator-form">
             <input type="text" 
-            placeholder="Enter the topic of the travel" 
+            placeholder="Enter the topic of your travel inspiration for today" 
             autofocus 
             required
             autocomplete="off"
@@ -25,8 +26,9 @@
             />
             <input type="submit" class="submit-button"/>
         </form>
-        <div class="quote" id="quote"></div>
-
+        <div class="hint">i.a: Beach, Tokio, Road</div>
+        </div>
+        <div class="quote hidden" id="quote"></div>
     </main>
     <footer>
         This AI Project was coded by <a href="https://github.com/maolseva" target="_blank">Maria Sepulveda</a>  
