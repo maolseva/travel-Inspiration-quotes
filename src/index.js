@@ -15,7 +15,8 @@ function generateQuote(event) {
       let instructionsInput = document.querySelector("#commands");
     let apiKey = "20ac4e1fof3t6e4bfd071a3613757bcc";
     let prompt = `Generate travel quotes about ${instructionsInput.value}`;
-    let context =  "Act as a travel-quote expert. Create a two-line inspiring travel quote and place **— SheCodes AI** as the last line";
+    let context =  "You are a creative travel writer. Write 1 short inspirational travel quote (2–3 lines max).At the very end, add the signature in bold like this: **-Sin Itinerario Viajes**";
+
 
     let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
   
@@ -23,9 +24,6 @@ function generateQuote(event) {
     quoteElement.classList.remove("hidden");
     quoteElement.innerHTML = `<div class="generating"> ⏱ Generating Travel Inspiration Quote about ${instructionsInput.value}</div>`;
 
-    console.log ("Generating quote");
-    console.log(`prompt: ${prompt}`);
-    console.log(`context: ${context}`);
 
     axios.get(apiUrl).then(displayQuote);
 
