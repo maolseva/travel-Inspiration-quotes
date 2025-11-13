@@ -15,7 +15,7 @@ function generateQuote(event) {
       let instructionsInput = document.querySelector("#commands");
     let apiKey = "20ac4e1fof3t6e4bfd071a3613757bcc";
     let prompt = `Generate travel quotes about ${instructionsInput.value}`;
-    let context =  "You are a creative travel writer. Write 1 short inspirational travel quote (2–3 lines max).At the very end, add the signature in bold like this: **-Sin Itinerario Viajes**";
+    let context =  "You are a creative travel writer. Write 1 short inspirational travel quote (2–3 lines max). At the very end, add the signature wrapped in HTML strong tags like this: <strong>-Sin Itinerario Viajes</strong>.";
 
 
     let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
